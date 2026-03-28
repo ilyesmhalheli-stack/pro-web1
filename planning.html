@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planning - StudyFlow</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>StudyFlow</h1>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="dashboard.html">Tableau de bord</a></li>
+                <li><a href="tasks.html">Tâches</a></li>
+                <li><a href="planning.html" class="active">Planning</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="questionnaire.html">Questionnaire</a></li>
+                <li><a href="funpage.html">Fun Page</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header planning-header">
+            <h2>Planning hebdomadaire</h2>
+            <p>Vos tâches de la semaine</p>
+        </section>
+
+        <section style="max-width: 1200px; margin: 0 auto; padding: 2rem 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+                <button class="btn">&lt; Semaine précédente</button>
+                <h3 style="color: #007bff; margin: 0;">28 Février - 6 Mars 2026</h3>
+                <button class="btn">Semaine suivante &gt;</button>
+            </div>
+
+            <!-- Tableau avec fusions de cellules -->
+            <table class="calendar-table" style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <thead>
+                    <tr style="background: #007bff; color: white;">
+                        <th style="padding: 1rem; border: 1px solid #ddd;">Lundi</th>
+                        <th style="padding: 1rem; border: 1px solid #ddd;">Mardi</th>
+                        <th style="padding: 1rem; border: 1px solid #ddd;">Mercredi</th>
+                        <th style="padding: 1rem; border: 1px solid #ddd;">Jeudi</th>
+                        <th style="padding: 1rem; border: 1px solid #ddd;">Vendredi</th>
+                        <th style="padding: 1rem; border: 1px solid #ddd;">Samedi</th>
+                        <th style="padding: 1rem; border: 1px solid #ddd;">Dimanche</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <!-- Matin -->
+                    <tr>
+                        <td class="split-cell" style="padding: 1rem; border: 1px solid #ddd; vertical-align: top;">
+                            <div class="cell-date" style="font-weight: bold; color: #007bff;">28 Fév</div>
+                            <div class="cell-hours" style="color: #666; font-size: 0.9rem;">9h-12h</div>
+                            <div class="cell-content">Examen algo<br>TD maths</div>
+                        </td>
+
+                        <td class="split-cell" style="padding: 1rem; border: 1px solid #ddd; vertical-align: top;">
+                            <div class="cell-date" style="font-weight: bold; color: #007bff;">1 Mar</div>
+                            <div class="cell-hours" style="color: #666; font-size: 0.9rem;">9h-12h</div>
+                            <div class="cell-content">TD maths</div>
+                        </td>
+
+                        <td class="split-cell" style="padding: 1rem; border: 1px solid #ddd; vertical-align: top;">
+                            <div class="cell-date" style="font-weight: bold; color: #007bff;">2 Mar</div>
+                            <div class="cell-hours" style="color: #666; font-size: 0.9rem;">9h-12h</div>
+                        </td>
+
+                        <td class="split-cell" style="padding: 1rem; border: 1px solid #ddd; vertical-align: top;">
+                            <div class="cell-date" style="font-weight: bold; color: #007bff;">3 Mar</div>
+                            <div class="cell-hours" style="color: #666; font-size: 0.9rem;">9h-12h</div>
+                            <div class="cell-content">Révision web</div>
+                        </td>
+
+                        <td class="split-cell" style="padding: 1rem; border: 1px solid #ddd; vertical-align: top;">
+                            <div class="cell-date" style="font-weight: bold; color: #007bff;">4 Mar</div>
+                            <div class="cell-hours" style="color: #666; font-size: 0.9rem;">9h-12h</div>
+                        </td>
+
+                        <td class="split-cell" style="padding: 1rem; border: 1px solid #ddd; vertical-align: top;">
+                            <div class="cell-date" style="font-weight: bold; color: #007bff;">5 Mar</div>
+                            <div class="cell-hours" style="color: #666; font-size: 0.9rem;">9h-12h</div>
+                        </td>
+
+                        <td class="split-cell" style="padding: 1rem; border: 1px solid #ddd; vertical-align: top;">
+                            <div class="cell-date" style="font-weight: bold; color: #007bff;">6 Mar</div>
+                            <div class="cell-hours" style="color: #666; font-size: 0.9rem;">9h-12h</div>
+                        </td>
+                    </tr>
+
+                    <!-- Après-midi -->
+                    <tr>
+                        <td class="split-cell" style="padding: 1rem; border: 1px solid #ddd; vertical-align: top;">
+                            <div class="cell-date" style="font-weight: bold; color: #007bff;">28 Fév</div>
+                            <div class="cell-hours" style="color: #666; font-size: 0.9rem;">14h-17h</div>
+                            <div class="cell-content">Examen algo</div>
+                        </td>
+
+                        <td class="split-cell" style="padding: 1rem; border: 1px solid #ddd; vertical-align: top;">
+                            <div class="cell-date" style="font-weight: bold; color: #007bff;">1 Mar</div>
+                            <div class="cell-hours" style="color: #666; font-size: 0.9rem;">14h-17h</div>
+                            <div class="cell-content">Projet web</div>
+                        </td>
+
+                        <td class="split-cell" style="padding: 1rem; border: 1px solid #ddd; vertical-align: top;">
+                            <div class="cell-date" style="font-weight: bold; color: #007bff;">2 Mar</div>
+                            <div class="cell-hours" style="color: #666; font-size: 0.9rem;">14h-17h</div>
+                        </td>
+
+                        <td class="split-cell" rowspan="2" style="padding: 1rem; border: 1px solid #ddd; vertical-align: top; background: #e3f2fd;">
+                            <div class="cell-date" style="font-weight: bold; color: #007bff;">3 Mar</div>
+                            <div class="cell-hours" style="color: #666; font-size: 0.9rem;">14h-21h</div>
+                            <div class="cell-content">Recherche</div>
+                        </td>
+
+                        <td class="split-cell" colspan="2" style="padding: 1rem; border: 1px solid #ddd; vertical-align: top; background: #fff3cd;">
+                            <div class="cell-date" style="font-weight: bold; color: #007bff;">4 Mar/5 Mar</div>
+                            <div class="cell-hours" style="color: #666; font-size: 0.9rem;">14h-17h</div>
+                            <div class="cell-content">Présentation</div>
+                        </td>
+
+                        <td class="split-cell" style="padding: 1rem; border: 1px solid #ddd; vertical-align: top;">
+                            <div class="cell-date" style="font-weight: bold; color: #007bff;">6 Mar</div>
+                            <div class="cell-hours" style="color: #666; font-size: 0.9rem;">14h-17h</div>
+                            <div class="cell-content">Deadline web</div>
+                        </td>
+                    </tr>
+
+                    <!-- Soir -->
+                    <tr>
+                        <td class="split-cell" style="padding: 1rem; border: 1px solid #ddd; vertical-align: top;">
+                            <div class="cell-date" style="font-weight: bold; color: #007bff;">28 Fév</div>
+                            <div class="cell-hours" style="color: #666; font-size: 0.9rem;">18h-21h</div>
+                            <div class="cell-content">Révisions</div>
+                        </td>
+
+                        <td class="split-cell" style="padding: 1rem; border: 1px solid #ddd; vertical-align: top;">
+                            <div class="cell-date" style="font-weight: bold; color: #007bff;">1 Mar</div>
+                            <div class="cell-hours" style="color: #666; font-size: 0.9rem;">18h-21h</div>
+                        </td>
+
+                        <td class="split-cell" style="padding: 1rem; border: 1px solid #ddd; vertical-align: top;">
+                            <div class="cell-date" style="font-weight: bold; color: #007bff;">2 Mar</div>
+                            <div class="cell-hours" style="color: #666; font-size: 0.9rem;">18h-21h</div>
+                            <div class="cell-content">TD à finir</div>
+                        </td>
+
+                        <td class="split-cell" style="padding: 1rem; border: 1px solid #ddd; vertical-align: top;">
+                            <div class="cell-date" style="font-weight: bold; color: #007bff;">4 Mar</div>
+                            <div class="cell-hours" style="color: #666; font-size: 0.9rem;">18h-21h</div>
+                            <div class="cell-content">Préparation</div>
+                        </td>
+
+                        <td class="split-cell" style="padding: 1rem; border: 1px solid #ddd; vertical-align: top;">
+                            <div class="cell-date" style="font-weight: bold; color: #007bff;">5 Mar</div>
+                            <div class="cell-hours" style="color: #666; font-size: 0.9rem;">18h-21h</div>
+                        </td>
+
+                        <td class="split-cell" style="padding: 1rem; border: 1px solid #ddd; vertical-align: top;">
+                            <div class="cell-date" style="font-weight: bold; color: #007bff;">6 Mar</div>
+                            <div class="cell-hours" style="color: #666; font-size: 0.9rem;">18h-21h</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Légende simple -->
+            <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
+                <h4 style="color: #007bff; margin-bottom: 1rem;">Légende</h4>
+                <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                    <div>🔴 Urgent</div>
+                    <div>🟡 Important</div>
+                    <div>🟢 Normal</div>
+                </div>
+            </div>
+
+            <!-- Statistiques simples -->
+            <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
+                <h4 style="color: #007bff; margin-bottom: 1rem;">Cette semaine</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;">
+                    <div style="text-align: center; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+                        <div style="font-size: 1.5rem; font-weight: bold; color: #007bff;">12</div>
+                        <div>Tâches totales</div>
+                    </div>
+                    <div style="text-align: center; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+                        <div style="font-size: 1.5rem; font-weight: bold; color: #dc3545;">3</div>
+                        <div>Urgentes</div>
+                    </div>
+                    <div style="text-align: center; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+                        <div style="font-size: 1.5rem; font-weight: bold; color: #ffc107;">4</div>
+                        <div>Important</div>
+                    </div>
+                    <div style="text-align: center; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+                        <div style="font-size: 1.5rem; font-weight: bold; color: #28a745;">5</div>
+                        <div>Normal</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src = "planning (1).js"></script>
+
+    <footer>
+        <p>&copy; 2025-2026 StudyFlow - ENSI</p>
+    </footer>
+</body>
+</html>

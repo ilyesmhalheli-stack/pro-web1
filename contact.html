@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Permet à la page de s’adapter aux téléphones, tablettes et ordinateurs -->
+    <title>Contact - StudyFlow</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>StudyFlow</h1>
+            <ul>
+                <li ><a href="index.html" class="active" >Accueil</a></li>
+                <li><a href="dashboard.html" class="active">Tableau de bord</a></li>
+                <li><a href="tasks.html" class="active">Tâches</a></li>
+                <li><a href="planning.html" class="active">Planning</a></li>
+                <li><a href="about.html" class="active">À propos</a></li>
+                <li><a href="questionnaire.html" class="active">Questionnaire</a></li>
+                <li><a href="funpage.html" class="active">Fun Page</a></li>
+                <li id="contact"><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Bannière animée -->
+         <section class="animated-banner">                                                                                     <!--permet de styler et animer cette section via CSS -->
+            <div class="banner-content" id="bannerText">
+                Bienvenue sur le site StudyFlow! 
+            </div>
+        </section>
+
+        <!-- Galerie d'images -->
+        <section class="image-gallery">                                                                                        <!--permet de styler cette section via CSS-->
+            <h3>Galerie d'images</h3>
+            <div class="gallery-container">
+                <img id="galleryImage" src="https://images.unsplash.com/photo-1513258496099-48168024aec0" alt="Image galerie">
+                <div class="gallery-controls">
+                    <button class="gallery-btn" onclick="previousImage()"><i class="fa fa-chevron-left"></i></button>
+                <button class="gallery-btn" onclick="nextImage()"><i class="fa fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-layout">
+            <div class="contact-form-section">
+                <h3>Envoyez-nous un message</h3>
+                <form action="https://httpbin.org/get" method="GET" class="task-form">
+                    <div class="form-group">
+                        <label>Prénom</label>
+                        <input type="text" name="prenom" placeholder="Med Aziz" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Nom</label>
+                        <input type="text" name="nom" placeholder="Gaddour" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="email" placeholder="MedAziz.Gaddour@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Sujet</label>
+                        <select name="sujet" required>
+                            <option value="">Sélectionnez</option>
+                            <option value="suggestion">Suggestion</option>
+                            <option value="bug">Rapport de bug</option>
+                            <option value="question">Question</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea name="message" rows="6" placeholder="Votre message..." required></textarea>                  <!--Zone de texte multi-lignes-->
+                    </div>
+
+                    <div class="form-group">
+                        <label>Priorité</label>
+                        <select name="priorite">
+                            <option value="basse">Basse</option>
+                            <option value="moyenne">Moyenne</option>
+                            <option value="haute">Haute</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" name="newsletter"> Recevoir des nouvelles de StudyFlow
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn">Envoyer</button>
+                    <button type="reset" class="btn">Effacer</button>
+                </form>
+            </div>
+
+            <div class="contact-info-section">
+                <h3>Informations</h3>
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="color: #007bff; margin-bottom: 0.5rem;">📧 Email</h4>
+                    <a href="mailto:studyflow@gmail.com" style="color: #007bff;">studyflow@gmail.com</a>
+                    <p style="font-size: 0.9rem; color: #666;">Réponse sous 24-48h</p>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="color: #007bff; margin-bottom: 0.5rem;">🏫 Adresse</h4>
+                    <p>École Nationale des Sciences de l'Informatique (ENSI)</p>
+                    <p>Campus Universitaire de La Manouba</p>
+                    <p>2010, Tunisie</p>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="color: #007bff; margin-bottom: 0.5rem;">📅 Disponibilité</h4>
+                    <p>Lundi - Vendredi : 9h - 17h</p>
+                    <p>Samedi : 9h - 12h</p>
+                    <p>Dimanche : Fermé</p>
+                </div>
+
+                <div>
+                    <h4 style="color: #007bff; margin-bottom: 0.5rem;">🎯 Objectif</h4>
+                    <p>Aider les étudiants à mieux gérer leur temps académique</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section de navigation rapide -->
+         
+        <section class="quick-nav-section">
+            <h3>Navigation rapide</h3>
+            <div class="quick-nav-links">
+                <a href="questionnaire.html" class="quick-nav-link">
+                    <div class="nav-icon">📋</div>
+                    <div class="nav-content">
+                        <h4>Questionnaire</h4>
+                        <p>Participez à notre questionnaire pour nous aider à améliorer StudyFlow</p>
+                    </div>
+                </a>
+                <a href="funpage.html" class="quick-nav-link">
+                    <div class="nav-icon">🎮</div>
+                    <div class="nav-content">
+                        <h4>Fun Page</h4>
+                        <p>Détendez-vous avec nos jeux et activités ludiques</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+
+
+    <footer>
+        <p>&copy; 2025-2026 StudyFlow - ENSI</p>
+    </footer>
+
+    <script src="contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tâches - StudyFlow</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>StudyFlow</h1>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="dashboard.html">Tableau de bord</a></li>
+                <li><a href="tasks.html" class="active">Tâches</a></li>
+                <li><a href="planning.html">Planning</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="questionnaire.html">Questionnaire</a></li>
+                <li><a href="funpage.html">Fun Page</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header tasks-header">
+            <h2>Gestion des tâches</h2>
+            <p>Ajoutez et suivez vos tâches</p>
+        </section>
+
+        <section class="tasks-layout">
+            <div class="form-section">
+                <h3>Ajouter une tâche</h3>
+                <form action="https://httpbin.org/get" method="GET" class="task-form">
+                    <div class="form-group">
+                        <label>Titre de la tâche</label>
+                        <input type="text" name="title" placeholder="Ex: Réviser pour l'examen" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Type</label>
+                        <select name="type" required>
+                            <option value="">Sélectionnez</option>
+                            <option value="examen">Examen</option>
+                            <option value="devoir">Devoir</option>
+                            <option value="projet">Projet</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Date limite</label>
+                        <input type="date" name="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Heure</label>
+                        <input type="time" name="time">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Priorité</label>
+                        <select name="priority" required>
+                            <option value="haute">Haute</option>
+                            <option value="moyenne">Moyenne</option>
+                            <option value="basse">Basse</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea name="description" rows="3" placeholder="Détails..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">Ajouter</button>
+                    <button type="reset" class="btn">Effacer</button>
+                </form>
+            </div>
+
+            <div class="tasks-list-section">
+                <h3>Liste des tâches</h3>
+
+                
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="tasks (1).js"></script>
+    <footer>
+        <p>&copy; 2025-2026 StudyFlow - ENSI</p>
+    </footer>
+</body>
+</html>

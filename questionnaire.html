@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire - StudyFlow</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .questionnaire-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+        
+        .questionnaire-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        
+        .radio-group,
+        .checkbox-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+        
+        .radio-item,
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .error-message {
+            color: #dc3545;
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .loading-message {
+            background: #cce5ff;
+            color: #004085;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+        
+        .btn {
+            background: #007bff;
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background: #0056b3;
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+            margin-left: 1rem;
+        }
+        
+        .btn-secondary:hover {
+            background: #545b62;
+        }
+
+        .btn:disabled {
+            background: #aaa;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>StudyFlow</h1>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="dashboard.html">Tableau de bord</a></li>
+                <li><a href="tasks.html">Tâches</a></li>
+                <li><a href="planning.html">Planning</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="questionnaire.html" class="active">Questionnaire</a></li>
+                <li><a href="funpage.html">Fun Page</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header questionnaire-header">
+            <h2>Questionnaire de satisfaction</h2>
+            <p>Votre avis nous intéresse ! Aidez-nous à améliorer StudyFlow</p>
+        </section>
+
+        <div class="questionnaire-container">
+
+            <div class="loading-message" id="loadingMessage">
+                ⏳ Envoi en cours, veuillez patienter...
+            </div>
+
+            <div class="success-message" id="successMessage">
+                ✅ Merci d'avoir rempli notre questionnaire ! Vos réponses ont été envoyées avec succès.
+            </div>
+
+            <form class="questionnaire-form" id="questionnaireForm" onsubmit="return validateForm(event)">
+                <!-- Nom complet -->
+                <div class="form-group">
+                    <label for="nomComplet">Nom complet *</label>
+                    <input type="text" id="nomComplet" name="nomComplet" placeholder="Entrez votre nom complet">
+                    <div class="error-message" id="nomError">Veuillez entrer votre nom complet (au moins 2 caractères)</div>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" placeholder="votre.email@example.com">
+                    <div class="error-message" id="emailError">Veuillez entrer une adresse email valide</div>
+                </div>
+
+                <!-- Type d'utilisateur -->
+                <div class="form-group">
+                    <label>Vous êtes *</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="etudiant" name="typeUtilisateur" value="etudiant">
+                            <label for="etudiant">Étudiant</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="enseignant" name="typeUtilisateur" value="enseignant">
+                            <label for="enseignant">Enseignant</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="autre" name="typeUtilisateur" value="autre">
+                            <label for="autre">Autre</label>
+                        </div>
+                    </div>
+                    <div class="error-message" id="typeError">Veuillez sélectionner votre type d'utilisateur</div>
+                </div>
+
+                <!-- Fréquence d'utilisation -->
+                <div class="form-group">
+                    <label for="frequence">À quelle fréquence utilisez-vous StudyFlow ? *</label>
+                    <select id="frequence" name="frequence">
+                        <option value="">Sélectionnez...</option>
+                        <option value="quotidien">Tous les jours</option>
+                        <option value="hebdomadaire">Plusieurs fois par semaine</option>
+                        <option value="mensuel">Quelques fois par mois</option>
+                        <option value="rare">Rarement</option>
+                        <option value="premiere">C'est ma première utilisation</option>
+                    </select>
+                    <div class="error-message" id="frequenceError">Veuillez sélectionner une fréquence d'utilisation</div>
+                </div>
+
+                <!-- Fonctionnalités préférées -->
+                <div class="form-group">
+                    <label>Quelles fonctionnalités utilisez-vous le plus ?</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="taches" name="fonctionnalites" value="Gestion des tâches">
+                            <label for="taches">Gestion des tâches</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="planning" name="fonctionnalites" value="Planning">
+                            <label for="planning">Planning</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="dashboard" name="fonctionnalites" value="Tableau de bord">
+                            <label for="dashboard">Tableau de bord</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commentaires -->
+                <div class="form-group">
+                    <label for="commentaires">Commentaires et suggestions</label>
+                    <textarea id="commentaires" name="commentaires" rows="4" placeholder="Partagez vos idées pour améliorer StudyFlow..."></textarea>
+                </div>
+
+                <!-- Note de satisfaction -->
+                <div class="form-group">
+                    <label for="satisfaction">Note de satisfaction globale *</label>
+                    <select id="satisfaction" name="satisfaction">
+                        <option value="">Sélectionnez une note...</option>
+                        <option value="⭐⭐⭐⭐⭐ Excellent">⭐⭐⭐⭐⭐ Excellent</option>
+                        <option value="⭐⭐⭐⭐ Très bon">⭐⭐⭐⭐ Très bon</option>
+                        <option value="⭐⭐⭐ Bon">⭐⭐⭐ Bon</option>
+                        <option value="⭐⭐ Moyen">⭐⭐ Moyen</option>
+                        <option value="⭐ Médiocre">⭐ Médiocre</option>
+                    </select>
+                    <div class="error-message" id="satisfactionError">Veuillez donner une note de satisfaction</div>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn" id="submitBtn">Soumettre le questionnaire</button>
+                    <button type="reset" class="btn btn-secondary">Effacer</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025-2026 StudyFlow - ENSI</p>
+    </footer>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="questionnaire.js"></script>
+</body>
+</html>
